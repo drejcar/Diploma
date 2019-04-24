@@ -17,3 +17,14 @@ def base_view(request, *args, **kwargs):
     return render(request, "base.html", {})
 
 
+def configure_view(request, *args, **kwargs):
+    return render(request, "configure.html", {})
+
+
+def copy_view(request, *args, **kwargs):
+    return render(request, "copy.html", {})
+
+
+def about_view(request, *args, **kwargs):
+    return render(request, "about.html", {})
+
