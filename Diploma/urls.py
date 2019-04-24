@@ -26,7 +26,7 @@ urlpatterns = [
     path('fortigate/', fortigate_view),
     path('', home_view),
     path('base/',base_view),
-    path('configure', configure_view()),
-    path('copy', copy_view()),
-    path('about', about_view())
+    path('configure/', configure_view),
+    path('copy/', copy_view),
+    path('about/', about_view)
 ]

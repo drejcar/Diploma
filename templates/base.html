@@ -3,13 +3,23 @@
 <head>
     <title>Control center</title>
     <meta charset="UTF-8">
-    <div>Base header placeholder</div>
-</head>
-<body>
-    {% include 'navigation.html' %}
+    <link rel="stylesheet" type="text/css" href="base_view.css">
 
+</head>
+
+<body name="base_body" style="margin-bottom:0;margin-top:0;margin-left:0;margin-right:0">
+    <div name="banner" style="position: -webkit-sticky;position: sticky;width:100%;top:0;z-index:1;background-color:#398b3b;height:50px;color:white;child-align: middle;margin-top:0;margin-left:0;margin-right:0">
+        <p style="position: relative;margin-bottom:0;margin-top:0">Base header placeholder</p>
+    </div>
+    <div name="navigation_tab" style="position: sticky;width:15%;left:0;top:50px;z-index: 1;border-bottom-style:inset;border-right-style: ridge">
+        {% include 'navigation.html' %}
+    </div>
+
+    <div style="position:relative;padding-left:18%;width:82%">
     {% block content%}
         Replaced pages
     {% endblock %}
+    </div>
+
 </body>
 </html>
