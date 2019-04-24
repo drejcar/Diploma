@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+#import views from Pages>views:
+from Pages.views import fortigate_view, base_view, home_view
+
+
+#our group of views linked to relative url paths:
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('fortigate/', fortigate_view),
+    path('', home_view),
+    path('base/',base_view)
 ]
