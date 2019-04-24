@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Control center</title>
+    <meta charset="UTF-8">
+    <div>Base header placeholder</div>
 </head>
 <body>
+    {% include 'navigation.html' %}
 
+    {% block content%}
+        Replaced pages
+    {% endblock %}
 </body>
 </html>
