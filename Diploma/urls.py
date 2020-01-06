@@ -15,18 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 #import views from Pages>views:
 from Pages.views import fortigate_view, base_view, home_view, configure_view, copy_view, about_view
+from FortiGate.views import newFortigate
 
 
 #our group of views linked to relative url paths:
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fortigate/', fortigate_view),
+    path('add/', newFortigate),
     path('', home_view),
     path('base/',base_view),
     path('configure/', configure_view),
     path('copy/', copy_view),
     path('about/', about_view)
 ]
+
+urlpatterns+=staticfiles_urlpatterns()

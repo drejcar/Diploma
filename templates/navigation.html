@@ -1,8 +1,83 @@
 <nav>
-    <ul style="margin-top:0;margin-bottom:0">
-        <li>Overview</li>
-        <li>Configure</li>
-        <li>Copy-configuration</li>
-        <li>About</li>
+    <ul style="
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    ">
+        <style>
+            a {
+                font-family: "Arial", sans-serif;
+
+            }
+            p{
+                 font-family: "Arial", sans-serif;
+
+            }
+            h5{
+                 font-family: "Arial", sans-serif;
+            }
+            a:link {
+                  background-color: #f1f1f1;
+                color: #000;
+                }
+
+                /* visited link */
+                a:visited {
+                  background-color: #f1f1f1;
+                    color: #000;
+                }
+
+                /* mouse over link */
+                a:hover {
+                  background-color: #555;
+                    color: white;
+                }
+
+                /* selected link */
+                a:active {
+                  background-color: #39b922;
+                    color: white;
+                }
+
+
+        </style>
+
+            <a style="display: block;
+
+              padding: 8px 16px;
+              text-decoration: none;
+               "
+               class="active"
+               href="/"
+            {% if request.path == '' %} {% endif %}>
+                overview
+            </a>
+
+
+            <a style="display: block;
+              padding: 8px 16px;
+              text-decoration: none;"
+               href="/configure">
+                Configure
+            </a>
+
+            <a style="display: block;
+              padding: 8px 16px;
+              text-decoration: none;"
+
+               href="/copy" >
+               Copy configuration{{ request.get.full_path }}
+            </a>
+
+            <a style="display: block;
+                  padding: 8px 16px;
+                  text-decoration: none;"
+               href="/about">
+                About
+            </a>
+
     </ul>
 </nav>
+

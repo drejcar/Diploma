@@ -3,19 +3,43 @@
 <head>
     <title>Control center</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="base_view.css">
-
+    <!--<link rel="stylesheet" type="text/css" href="base_view.css">
+    -->
 </head>
 
-<body name="base_body" style="margin-bottom:0;margin-top:0;margin-left:0;margin-right:0">
-    <div name="banner" style="position: -webkit-sticky;position: sticky;width:100%;top:0;z-index:1;background-color:#398b3b;height:50px;color:white;child-align: middle;margin-top:0;margin-left:0;margin-right:0">
-        <p style="position: relative;margin-bottom:0;margin-top:0">Base header placeholder</p>
+<body style="margin-bottom:0;margin-top:0;margin-left:0;margin-right:0">
+    <div style="
+        position: fixed;
+        left: 0%;
+        top: 0%;
+        right:0%;
+        width: 100%;
+        height: 6%;
+        z-index: 1;
+        background-color:#46a23d;">
+        <H2 style="margin-left:12px;width: 20%;float:left;offset-start: 0;font-family: 'Arial';color: #f1f1f1">CONTROL CENTER</H2>
+        {% load static %}
+        <img src="{% static 'fri_logo_trans.png' %}" style="z-index: 2;float:right;height:100%" alt="Fri Logo">
     </div>
-    <div name="navigation_tab" style="position: sticky;width:15%;left:0;top:50px;z-index: 1;border-bottom-style:inset;border-right-style: ridge">
+    <div style="
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 6%;
+    width: 12%;
+    height: 95%;
+    background-color: #c5dbcb;">
         {% include 'navigation.html' %}
     </div>
 
-    <div style="position:relative;padding-left:18%;width:82%">
+    <div style="
+    position: absolute;
+    overflow:auto;
+    left: 14%;
+    top: 6%;
+    width: 88%;
+    height: available;
+    background-color: #f7fffc;">
     {% block content%}
         Replaced pages
     {% endblock %}

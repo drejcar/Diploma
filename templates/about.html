@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 style="height: 6000px">About //TODO</h1>
+    <h1 >About //TODO</h1>
+    {% load static %}
+    <h5>This is a graduate thesis project at University of Ljubljana, Faculty of computer and information science.</h5>
+    <p>Purpose of this application is an easier and faster basic setup of multiple firewalls at the beginning of a project.</p>
+    <p>Author: Andrej Buh</p>
+    <p>Mentor: Prof. dr. Miha Mraz</p>
+    <img src="{% static 'fri_logo_trans.png' %}" style="z-index: 2;" alt="Fri Logo" width="620" height="259">
 {% endblock %}

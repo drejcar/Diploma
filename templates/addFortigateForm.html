@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <form action="/newFortiGate" method="get">
+        {% csrf_token %}
+        <label>IP address:
+            <input type="text" name="FGipaddress" value="192.168.1.99">
+        </label>
+        <label>Username:
+            <input type="text" name="FGusername" value="admin">
+        </label>
+        <label>Password:
+            <input type="password" name="FGpassword">
+        </label>
+        <label>connection type:
+            <input type="radio" name="type" value="html">HTML<br>
+            <input type="radio" name="type" value="ssh">SSH<br>
+            <input type="radio" name="type" value="serial">Serial
+        </label>
+        <button type="submit">search</button>
+    </form>
+</body>
+</html>

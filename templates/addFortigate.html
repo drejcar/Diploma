@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <form method="get">
+        {% csrf_token %}
+        <a>
+            {{ form.as_p }}
+        </a>
+        <button type="submit" >Add FortiGate</button>
+
+    </form>
+
+
+    {% if search_result %}
+    <hr>
+    {% if search_result.success %}
+      {% for result in search_result.results %}
+        <h3>{{ result.word }}</h3>
+
+        {% endfor %}
+    {% else %}
+      <p><em>{{ search_result.message }}</em></p>
+    {% endif %}
+  {% endif %}
+</body>
+</html>
