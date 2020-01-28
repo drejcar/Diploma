@@ -1,33 +1,23 @@
-from django import forms
-from django.core.validators import ip_address_validators, RegexValidator
-from django.core.exceptions import ValidationError
-from django.conf import settings
-import urllib.request
-from django.http import response
-from django.shortcuts import render
-
-Choices = [('html', 'HTML'), ('ssh', 'SSH'), ('Serial', 'Serial')]
+from django.forms import ModelForm
+from FortiGate.models import *
 
 
-class addFortigate(forms.Form):
-    ipaddress = forms.CharField(label='IPv4 address:', initial='192.168.1.99')
-    username = forms.CharField(label='Username', initial='admin')
-    password = forms.CharField(label='password', initial='', widget=forms.PasswordInput, required=False)
-    contype = forms.ChoiceField(label='Connection Type', choices=Choices, widget=forms.RadioSelect, initial='HTML')
+class addFortigateForm(ModelForm):
+    class Meta:
+        model = addFortigate
+        fields = ["ipaddress", "username", "password", "contype"]
 
-    address = str(ipaddress)
+    def clean(self):
+        super(addFortigateForm, self).clean()
+        ipaddress = self.cleaned_data.get("ipaddress")
+        username = self.cleaned_data.get("username")
+        password = self.cleaned_data.get("password")
+        contype = self.cleaned_data.get("contype")
+        # pogoji
+        #if len(str(ipaddress)) != 15:
+        #   self.errors['ipaddress'] = self.error_class(['maximum 15 characters allowed in IPv4 address!'])
 
-    address = 'https://' + address
-    values = {'username': username,
-              'password': password}
-
-#   def clean(self):
-#       cleaned_data = super().clean()
-#       super().ipaddress = cleaned_data.get("ipaddress")
-#       super().username = cleaned_data.get("username")
-#       super().password = cleaned_data.get("password")
-#   clean()
-
+        return self.cleaned_data
 
 #   def search(self, ipaddress,values):
 #       data = urllib.parse.urlencode(values)

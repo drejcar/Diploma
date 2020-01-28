@@ -33,12 +33,14 @@ python manage.py runserver 127.0.0.1:8080
 # Application definition
 
 INSTALLED_APPS = [
+    'FortiGate',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [

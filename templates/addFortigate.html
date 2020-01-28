@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'base.html' %}
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-
+    <title>Add a new FortiGate</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
 </head>
 <body>
-    <form method="get">
-        {% csrf_token %}
+    <form  method="post">
+
         <a>
-            {{ form.as_p }}
+            {{   form.as_p  }}
         </a>
-        <button type="submit" >Add FortiGate</button>
-
+        <button type="submit" class="btn btn-info">Add FortiGate</button>
+        {% csrf_token %}
     </form>
-
 
     {% if search_result %}
     <hr>
@@ -28,3 +34,5 @@
   {% endif %}
 </body>
 </html>
+
+{% endblock %}
