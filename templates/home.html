@@ -1,8 +1,19 @@
+
 {% extends 'base.html' %}
+{% load render_table from django_tables2 %}
 
 {% block content %}
-    <h1>Welcome page //TODO</h1>
 
-    {% include 'addFortigate.html' %}
+
+    <head>Your added FortiGate units: //TODO
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+    <a>{% render_table table %}
+    </a>
+
+    </body>
+
+
 
 {% endblock %}

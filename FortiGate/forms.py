@@ -5,14 +5,13 @@ from FortiGate.models import *
 class addFortigateForm(ModelForm):
     class Meta:
         model = addFortigate
-        fields = ["ipaddress", "username", "password", "contype"]
+        fields = ["ipaddress", "username", "password"]
 
     def clean(self):
         super(addFortigateForm, self).clean()
         ipaddress = self.cleaned_data.get("ipaddress")
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
-        contype = self.cleaned_data.get("contype")
         # pogoji
         #if len(str(ipaddress)) != 15:
         #   self.errors['ipaddress'] = self.error_class(['maximum 15 characters allowed in IPv4 address!'])

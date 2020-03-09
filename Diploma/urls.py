@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 #import views from Pages>views:
 from Pages.views import fortigate_view, base_view, home_view, configure_view, copy_view, about_view
-from FortiGate.views import newFortigate
+from FortiGate.views import newFortigate, homePage
 
 
 #our group of views linked to relative url paths:
@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('fortigate/', fortigate_view),
     path('add/', newFortigate),
-    path('', home_view),
+    path('', homePage.as_view()),
     path('base/',base_view),
     path('configure/', configure_view),
     path('copy/', copy_view),
